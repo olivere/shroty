@@ -5,8 +5,8 @@ deploy_to=`cat DEPLOY_TO`
 ssh as2 <<EOF
 cd ${deploy_to}/current
 /usr/local/go/bin/go build -o shroty
-killll -INT shroty
+killall -INT shroty
 cd ${deploy_to}/current
-nohup ./shroty &
-print $! > ${deploy_to}/shared/pids/shroty.pid
+nohup ./shroty > ${deploy_to}/shared/log/production.log &
+echo $! > ${deploy_to}/shared/pids/shroty.pid
 EOF
