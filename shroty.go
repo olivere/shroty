@@ -22,7 +22,9 @@ var (
 )
 
 func shorten(w http.ResponseWriter, r *http.Request) {
-	http.NotFound(w, r)
+	url := mux.Vars(r)["url"]
+
+	fmt.Fprintf(w, "Shorten %v", url)
 }
 
 func open(w http.ResponseWriter, r *http.Request) {
