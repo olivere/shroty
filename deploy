@@ -7,6 +7,6 @@ cd ${deploy_to}/current
 /usr/local/go/bin/go build -o shroty
 killall -INT shroty
 cd ${deploy_to}/current
-nohup ./shroty > ${deploy_to}/shared/log/production.log &
+nohup ./shroty 2> ${deploy_to}/shared/log/production.log &
 echo $! > ${deploy_to}/shared/pids/shroty.pid
 EOF
