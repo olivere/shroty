@@ -12,7 +12,7 @@ A shortener is pretty easy, so why not
 1. `go get code.google.com/p/gorilla/mux`
 1. `go get github.com/simonz05/godis`
 1. `go build`
-1. `./shroty` or `./shroty -f ./config.json`
+1. `./shroty -http :6666`
 
 ## License
 
