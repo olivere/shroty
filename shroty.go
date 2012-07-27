@@ -24,6 +24,8 @@ var (
 func shorten(w http.ResponseWriter, r *http.Request) {
 	url := mux.Vars(r)["url"]
 
+	log.Printf("Shorten %v\n", url)
+
 	fmt.Fprintf(w, "Shorten %v", url)
 }
 
@@ -46,10 +48,10 @@ func static(w http.ResponseWriter, r *http.Request) {
 
 	fi, e := os.Stat(staticFile)
 	if e != nil {
-		log.Println("File error: ", e)
+		log.Printf("File error: %v\n", e)
 		http.NotFound(w, r)
 	} else if fi.IsDir() {
-		log.Println("File not found: ", staticFile)
+		log.Printf("File not found: %v\n", staticFile)
 		http.NotFound(w, r)
 	} else {
 		http.ServeFile(w, r, staticFile)
