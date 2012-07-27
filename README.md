@@ -1,5 +1,4 @@
-Shroty
-======
+# Shroty
 
 Sorry. It was a typo. Should've been shorty (<- see, I can type!).
 That's how things start. Anyway.
