@@ -26,7 +26,7 @@ func shorten(w http.ResponseWriter, r *http.Request) {
 
 	log.Printf("Shorten %v\n", url)
 
-	fmt.Fprintf(w, "Shorten %v", url)
+	fmt.Fprintf(w, "Shortenize %v", url)
 }
 
 func open(w http.ResponseWriter, r *http.Request) {

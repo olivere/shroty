@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git push web
+
 deploy_to=`cat DEPLOY_TO`
 
 ssh as2 <<EOF
@@ -7,6 +9,6 @@ cd ${deploy_to}/current
 /usr/local/go/bin/go build -o shroty
 killall -INT shroty
 cd ${deploy_to}/current
-nohup ./shroty 2> ${deploy_to}/shared/log/production.log &
+nohup ./shroty > ${deploy_to}/shared/log/production.log &
 echo $! > ${deploy_to}/shared/pids/shroty.pid
 EOF
