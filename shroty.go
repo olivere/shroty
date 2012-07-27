@@ -99,6 +99,7 @@ func main() {
 	}
 
 	log.Printf("Listening on %v\n", server)
+	log.SetOutput(os.Stdout)
 
 	httpServ.ListenAndServe()
 }
